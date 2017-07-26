@@ -1,0 +1,116 @@
+/* ====== Base ====== */
+* {
+    font-family: "Microsoft YaHei UI", Helvetica, Arial, sans-serif;
+}
+html,body {
+    margin:0;
+}
+
+/* ====== Login ====== */
+
+/* --- login container --- */
+.login-container {
+    display: flex;
+    padding:60px 0;
+}
+
+.login-layer {
+    width: 320px;
+    margin: auto;
+    padding: 0 40px;
+}
+
+.login-header {
+    margin-bottom: 15px;
+    color: #333;
+    text-align: center;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+.login-header>h1{
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+}
+
+.login-form{
+    border:1px solid #ccc;
+    border-radius: 3px;
+    padding:20px;
+}
+
+.login-check {
+    margin:8px 0;
+}
+.login-seperator {
+    height:0;
+    border-top:1px solid #ccc;
+    margin: 20px 0;
+}
+.license-status {
+    padding: 5px 10px;
+}
+
+/* ====== License ====== */
+.license-input {
+    width: 400px;
+    height: 180px;
+    padding: 5px;
+}
+
+/* ====== Index ====== */
+
+/* --- header nav --- */
+.header {
+    background-color: #e6e6e6;
+    border-bottom: 1px solid #ccc;
+    padding-left: 10px;
+    padding-right: 15px;
+    height: 60px;
+    overflow: visible;
+}
+.header-row {
+    height:100%;
+    line-height:60px;
+}
+.nav {
+    position: relative;
+    text-align: right;
+    height:100%;
+}
+.nav-layer {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    height:100%;
+    letter-spacing: -8px;
+}
+.nav-item {
+    display:inline-block;
+    padding: 0 10px;
+    background-color: #e6e6e6;
+    letter-spacing:normal;
+    height:100%;
+    vertical-align: bottom;
+}
+.nav-item:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: #01AAED;
+}
+
+/* --- index container --- */
+
+/* --- footer --- */
+.footer {
+    position: fixed;
+    width: 100%;
+    padding-left:10px;
+    padding-right: 10px;
+    border-top:1px solid #d9d9d9;
+    bottom: 0px;
+    height: 40px;
+    line-height: 36px;
+    color: #333;
+    background-color: #e6e6e6;
+}

@@ -1,0 +1,49 @@
+{
+  "configuration": {
+    "name": "log4j2",
+    "properties": {
+      "property": {
+        "name":"fileName",
+        "value":"target/logs/log4j2.log"
+      }
+    },
+    "appenders": {
+      "Console": {
+        "name":"Console",
+        "target":"SYSTEM_OUT",
+        "PatternLayout": {
+          "charset":"UTF-8",
+          "pattern":"%m%n"
+        }
+      },
+      "RollingFile": {
+        "name":"File",
+        "fileName":"${fileName}",
+        "filePattern":"target/logs/log4j2-%d{yyyyMMdd}-%i.log.gz",
+        "PatternLayout": {
+          "charset":"UTF-8",
+          "pattern":"[%-5p] %d{yyyy-MM-dd HH:mm:ss.SSS} %l - %m%n"
+        },
+        "Policies": {
+          "SizeBasedTriggeringPolicy": {
+            "size":"10 MB"
+          }
+        },
+        "DefaultRolloverStrategy": {
+          "max":"10"
+        }
+      }
+    },
+    "loggers": {
+      "root": {
+        "level":"debug",
+        "appender-ref": [{
+          "ref":"Console"
+        },
+          {
+            "ref":"File"
+          }]
+      }
+    }
+  }
+}
