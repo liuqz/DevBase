@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome">
+    <meta username="renderer" content="webkit">
+    <meta username="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.bootcss.com/pure/1.0.0/pure-min.css" rel="stylesheet">
+    <!--<link href="https://cdn.bootcss.com/pure/1.0.0/grids-core-min.css" rel="stylesheet">-->
+    <link href="https://cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/DevBase/static/css/pure-ext.css" rel="stylesheet">
+    <link href="/DevBase/static/css/app.css" rel="stylesheet">
+
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/layer/3.0/layer.min.js"></script>
+    <script src="/DevBase/vendor/vm/knockout-3.4.2.js"></script>
+    <script src="/DevBase/static/js/app.js"></script>
+    <script src="/DevBase/pages/dept/dept.js"></script>
+</head>
+<body>
+<div class="wf-container">
+    <a class="wf-btn">默认</a>
+    <a class="wf-btn wf-blue">蓝色</a>
+    <a class="wf-btn wf-blue-aux">浅蓝色</a>
+    <a class="wf-btn wf-yellow disabled">黄色</a>
+    <a class="wf-btn wf-orange">橙色</a>
+    <a class="wf-btn wf-red wf-radius">红色</a>
+    <a class="wf-btn wf-green wf-round">绿色</a>
+    <a class="wf-btn wf-white">白色</a>
+    <a class="wf-btn wf-white-aux">浅白色</a>
+    <a class="wf-btn wf-black-aux">黑灰色</a>
+    <a class="wf-btn wf-black">黑色</a>
+    <a class="wf-btn wf-gray-lv1">灰色1</a>
+    <a class="wf-btn wf-gray-lv2">灰色2</a>
+    <a class="wf-btn wf-gray-lv3">灰色3</a>
+    <a class="wf-btn wf-gray-lv4">灰色4</a>
+
+    <h3>Knockout</h3>
+    <a class="wf-btn wf-blue" data-bind="click:loadvm">加载</a>
+    <a class="wf-btn wf-blue-aux" data-bind="click:pop">删除末行</a>
+    <a class="wf-btn wf-red" data-bind="click:counter">现有数据</a>
+    <a class="wf-btn wf-green" data-bind="click:tablecompact">紧缩表格</a>
+    <a class="wf-btn wf-orange" data-bind="click:tablenormal">清除紧缩</a>
+
+    <table id="ko-table" class="pure-table pure-table-bordered wf-table">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>编码</th>
+            <th>名称</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+
+        <tbody data-bind="foreach: user">
+        <tr>
+            <!--<td data-bind="text: $index">1</td>-->
+            <td data-bind="text: $index()+1"></td>
+            <td data-bind="text: deptcode">Honda</td>
+            <td data-bind="text: deptname">Accord</td>
+            <td><i class="fa fa-remove" data-bind="click:$parent.del"></i> <i class="fa fa-edit" data-bind="click:$parent.edit"></i></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<div id="editko" style="display: none;">
+    <form class="pure-form pure-form-aligned" data-bind="with:single">
+        <fieldset>
+            <div class="pure-control-group">
+                <label for="code">编码</label>
+                <input id="code" type="text" placeholder="编码" data-bind="value:deptcode">
+                <span class="pure-form-message-inline">*</span>
+            </div>
+
+            <div class="pure-control-group">
+                <label for="name">名称</label>
+                <input id="name" type="text" placeholder="名称" data-bind="value:deptname">
+                <span class="pure-form-message-inline">*</span>
+            </div>
+
+
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>

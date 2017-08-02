@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome">
+    <meta username="renderer" content="webkit">
+    <meta username="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.bootcss.com/pure/1.0.0/pure-min.css" rel="stylesheet">
+    <!--<link href="https://cdn.bootcss.com/pure/1.0.0/grids-core-min.css" rel="stylesheet">-->
+    <link href="https://cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/DevBase/static/css/pure-ext.css" rel="stylesheet">
+    <link href="/DevBase/static/css/app.css" rel="stylesheet">
+
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/layer/3.0/layer.min.js"></script>
+    <script src="/DevBase/vendor/vm/knockout-3.4.2.js"></script>
+    <script src="/DevBase/static/js/app.js"></script>
+    <script src="/DevBase/pages/users/userlist.js"></script>
+</head>
+<body>
+<div class="wf-container">
+
+    <h3>Knockout</h3>
+
+    <form class="pure-form">
+        <fieldset>
+            <legend>A compact inline form</legend>
+
+            <input type="text" placeholder="登录名">
+            <input type="text" placeholder="密码">
+            <select id="dept" data-bind="foreach:dept">
+                <option data-bind="value:pk_dept,text:deptname"></option>
+
+            </select>
+
+
+            <button class="pure-button pure-button-primary"><i class="fa fa-plus"></i></button>
+        </fieldset>
+    </form>
+    <a class="wf-btn wf-blue" data-bind="click:loadvm">加载</a>
+    <a class="wf-btn wf-blue-aux" data-bind="click:pop">删除末行</a>
+    <a class="wf-btn wf-red" data-bind="click:counter">现有数据</a>
+    <a class="wf-btn wf-green" data-bind="click:tablecompact">紧缩表格</a>
+    <a class="wf-btn wf-orange" data-bind="click:tablenormal">清除紧缩</a>
+
+    <table id="ko-table" class="pure-table pure-table-bordered wf-table">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>编码</th>
+            <th>名称</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+
+        <tbody data-bind="foreach: user">
+        <tr>
+            <!--<td data-bind="text: $index">1</td>-->
+            <td data-bind="text: $index()+1"></td>
+            <td data-bind="text: usercode">Honda</td>
+            <td data-bind="text: username">Accord</td>
+            <td><i class="fa fa-remove" data-bind="click:$parent.del"></i> <i class="fa fa-edit" data-bind="click:$parent.edit"></i></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>

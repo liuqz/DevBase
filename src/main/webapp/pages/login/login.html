@@ -18,6 +18,7 @@
     <script src="https://cdn.bootcss.com/layer/3.0/layer.min.js"></script>
     <script src="vendor/vm/knockout-3.4.2.js"></script>
     <script src="static/js/app.js"></script>
+    <script src="pages/login/login.js"></script>
 </head>
 <body>
 <div class="login-container">
@@ -36,17 +37,17 @@
             </div>
 
             <div class="wf-form-group">
-                <input id="rem" type="checkbox" class="login-check"> 记住
+                <input id="rem" type="checkbox" class="login-check" data-bind="checked:rem"> 记住
             </div>
 
             <div class="wf-form-group">
-                <button id="login-btn" class="wf-btn wf-green wf-block" data-bind="click:$parent.checkLogin">登录</button>
+                <button id="login-btn" class="wf-btn wf-green wf-block" data-bind="click:$root.submit">登录</button>
             </div>
 
             <div class="login-seperator"></div>
 
-            <!--<img src="http://www.w3school.com.cn/ui2017/compatible_chrome.png" />
-            <img src="http://www.w3school.com.cn/ui2017/compatible_firefox.png" />-->
+            <img src="http://www.w3school.com.cn/ui2017/compatible_chrome.png" />
+            <img src="http://www.w3school.com.cn/ui2017/compatible_firefox.png" />
 
             <div>
 
