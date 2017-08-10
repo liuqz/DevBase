@@ -20,6 +20,20 @@ $(function () {
                 }
             });
         },
+        loadtree: function () {
+            $.ajax({
+                type : 'get',
+                url : '/DevBase/dept/list',
+                dataType : 'json',
+                contentType: 'application/json;charset=utf-8',
+                success : function(json) {
+                    var zTreeObj = $.fn.zTree.init($("#treeDemo"), {data:{key:{name:"deptname"},simpleData:{enable:true,idKey:"pk_dept", pIdKey:"parentpk",rootPId:null}}, callback:{onClick:function(event,treeId,treeNode){console.log(treeNode);}}}, json);
+                },
+                error: function (xhr,status,et) {
+                    layer.alert(status);
+                }
+            });
+        },
         counter: function(){
             layer.msg(JSON.stringify(vm.user()));
         },
@@ -57,4 +71,6 @@ $(function () {
 
     };
     ko.applyBindings(vm);
+
+    vm.loadtree();
 });

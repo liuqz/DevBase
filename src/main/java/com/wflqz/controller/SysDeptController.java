@@ -26,4 +26,5 @@ public class SysDeptController {
     public Object saveOne(SysDept dept) {
         return dao.save(dept);
     }
+
 }

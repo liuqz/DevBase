@@ -2,6 +2,7 @@ package com.wflqz.base.security;
 
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.codec.digest.Md5Crypt;
+import org.apache.commons.codec.digest.Sha2Crypt;
 
 public class SysCodec {
     public static final String RSA_PUBLIC_KEY = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCfyMWAXrpq/UCwfpZnNuLkE9FEIQdEuP11t3Tn3+b32er9pCc+0ARkhJgx0JzAucMXBxtz3cyRXoaKPjRoBPbaJecB03y2SjBlJPIrKzdGrSuTnfKbSk4ADuGkiItQD75Sc0IZU1vbGn5+G+aSX1pvB0+6gyOF9lt9Zxi/I0ZsDwIDAQAB";
@@ -12,7 +13,11 @@ public class SysCodec {
         return DigestUtils.sha256Hex(DigestUtils.md5Hex(key));
     }
 
-    public static String encodeWithSalt(String data, String salt){
+    public static String md5EncryptWithSalt(String data, String salt){
         return Md5Crypt.md5Crypt(data.getBytes(), salt);
+    }
+
+    public static String sha256EncryptWithSalt(String date, String salt){
+        return Sha2Crypt.sha256Crypt(date.getBytes(), salt);
     }
 }
